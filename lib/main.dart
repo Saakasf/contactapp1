@@ -81,10 +81,10 @@ class HomePage extends StatelessWidget {
                       backgroundImage: AssetImage("images/lady.jpg"),
                     ),
                     title: Text(
-                      "Techries Ghana",
+                      "Mr.Tungbani",
                       style: TextStyle(fontWeight: FontWeight.w800),
                     ),
-                    subtitle: Text("+233 505 419 44"),
+                    subtitle: Text("+233502383570"),
                     trailing: Icon(Icons.more_horiz),
                   ),
                 ),
