@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:contactapp/contact_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +24,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List mycontacts = listofcontacts;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -43,7 +46,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-          itemCount: 10,
+          itemCount: mycontacts.length,
           itemBuilder: (BuildContext context, index) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,17 +77,19 @@ class HomePage extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ContactPage()));
+                        MaterialPageRoute(builder: (context) => ContactPage(mycontact: mycontacts[index],)));
                   },
-                  child: const ListTile(
+                  child:  ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage("images/lady.jpg"),
-                    ),
+                      backgroundImage: NetworkImage("${mycontacts[index]["image"]}")
+                    ,),
                     title: Text(
-                      "Mr.Tungbani",
+                      mycontacts[index]["name"],
                       style: TextStyle(fontWeight: FontWeight.w800),
                     ),
-                    subtitle: Text("+233502383570"),
+                    subtitle: Text(
+                      mycontacts[index]["phone"]
+                    ),
                     trailing: Icon(Icons.more_horiz),
                   ),
                 ),
@@ -106,3 +111,194 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
+
+
+List listofcontacts =[
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=765"
+  },
+  {
+    "name":"Motuo6",
+    "location":"wa Zongo",
+    "email": "motuo6@gmail.com",
+    "phone": "0543339984",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=413"
+  },
+  {
+    "name":"Gaeten",
+    "location":"Konta",
+    "email": "Geaten1@gmail.com",
+    "phone": "0508041151",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=10"
+  },
+  {
+    "name":"Haadi",
+    "location":"Bole",
+    "email": "Haadi24@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=70"
+  },
+  {
+    "name":"niamatu",
+    "location":"jejerayiri",
+    "email": "ibrahimniamatu@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=42"
+  },
+  {
+    "name":"Ramzia",
+    "location":"wa Kpaguri",
+    "email": "ramzy4@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=67"
+  },
+  {
+    "name":"salma",
+    "location":"Gando",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=14"
+  },
+  {
+    "name":"Safiya",
+    "location":"wa tech",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=38"
+  },
+  {
+    "name":"Simon",
+    "location":"kperihi",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=46"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=369"
+  },
+  {
+    "name":"Gideon",
+    "location":"wa lowcost",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=17"
+  },
+  {
+    "name":"sin",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=123"
+  },
+  {
+    "name":"chris",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=44"
+  },
+  {
+    "name":"Cosmass",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=72"
+  },
+  {
+    "name":"Awudu",
+    "location":"Tendamba",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=25"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=486"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=53"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=759"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=458"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=69"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=58"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=75"
+  },
+  {
+    "name":"Cobo",
+    "location":"wa poly",
+    "email": "lambert1@gmail.com",
+    "phone": "0508096500",
+    "Group":"family",
+    "image":"https://picsum.photos/200/300?random=5"
+  },
+];
+
